@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.ocrloader {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.ocrloader span {
+  position: absolute;
+  left: 13px;
+  top: 0;
+  width: 90%;
+  height: 5px;
+  background-color: #1C7ED6;
+  box-shadow: 0 0 100px 20px #1C7ED6,
+    0 0 1px 1px #1C7ED6;
+  z-index: -1;
+  border-radius: 20px;
+  opacity: 0.8;
+  animation: move 2s infinite;
+}
+
+.ocrloader:before,
+.ocrloader:after,
+.ocrloader em:after,
+.ocrloader em:before {
+  border-color: #fff;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+  border-width: 0px;
+}
+
+.ocrloader:before {
+  left: 0;
+  top: 0;
+  border-left-width: 6px;
+  border-top-width: 6px;
+  border-radius: 20px 0 0 0;
+}
+
+.ocrloader:after {
+  right: 0;
+  top: 0;
+  border-right-width: 6px;
+  border-top-width: 6px;
+  border-radius: 0 20px 0 0;
+}
+
+.ocrloader em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 6px;
+  border-bottom-width: 6px;
+  border-radius: 0 0 0 20px;
+}
+
+.ocrloader em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 6px;
+  border-bottom-width: 6px;
+  border-radius: 0 0 20px 0;
+}
+
+@keyframes move {
+
+  0% {
+    top: 10px;
+  }
+
+  50% {
+    top: 95%;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
